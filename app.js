@@ -1,9 +1,9 @@
 var mysql = require("mysql");
 var inq = require("inquirer");
 var table = require("console.table");
-var add = require("./lib/add");
+var add = require("./add");
 var update = require("./lib/update");
-var view = require("./lib/view");
+var view = require("./view");
 
 var connection = mysql.createConnection({
   host: "localhost",

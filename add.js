@@ -1,6 +1,6 @@
 var inq = require("inquirer");
 var mysql = require("mysql");
-var app = require("../app");
+var app = require("../11-Homework/app");
 var view = require("./view");
 
 var connection = mysql.createConnection({
