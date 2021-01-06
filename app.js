@@ -24,15 +24,12 @@ console.log(`╔═════════════════════�
 var connection = mysql.createConnection({
     host: "localhost",
 
-    // Your port; if not 3306
     port: 3306,
 
-    // Your username
     user: "root",
 
-    // Your password
     password: "Hofgartner01",
-    database: "employee_tracker_db"
+    database: "employee_db"
 });
 
 connection.connect(function (err) {
@@ -46,39 +43,39 @@ function askQuestions() {
         message: "what would you like to do?",
         type: "list",
         choices: [
-            "view all employees",
-            "view all departments",
-            "add employee",
-            "add department",
-            "add role",
-            "update employee role",
+            "View all employees",
+            "View all departments",
+            "Add employee",
+            "Add department",
+            "Add role",
+            "Update employee role",
             "QUIT"
         ],
         name: "choice"
     }).then(answers => {
         console.log(answers.choice);
         switch (answers.choice) {
-            case "view all employees":
+            case "View all employees":
                 viewEmployees()
                 break;
 
-            case "view all departments":
+            case "View all departments":
                 viewDepartments()
                 break;
 
-            case "add employee":
+            case "Add employee":
                 addEmployee()
                 break;
 
-            case "add department":
+            case "Add department":
                 addDepartment()
                 break;
 
-            case "add role":
+            case "Add role":
                 addRole()
                 break;
 
-            case "update employee role":
+            case "Update employee role":
                 updateEmployeeRole();
                 break;
 
@@ -150,15 +147,15 @@ function addDepartment() {
 function addRole() {
     inquirer.prompt([
         {
-            message: "enter title:",
+            message: "Enter title:",
             type: "input",
             name: "title"
         }, {
-            message: "enter salary:",
+            message: "Enter salary:",
             type: "number",
             name: "salary"
         }, {
-            message: "enter department ID:",
+            message: "Enter department ID:",
             type: "number",
             name: "department_id"
         }
@@ -174,11 +171,11 @@ function addRole() {
 function updateEmployeeRole() {
     inquirer.prompt([
         {
-            message: "which employee would you like to update? (use first name only for now)",
+            message: "Which employee would you like to update? (use first name only for now)",
             type: "input",
             name: "name"
         }, {
-            message: "enter the new role ID:",
+            message: "Enter the new role ID:",
             type: "number",
             name: "role_id"
         }
